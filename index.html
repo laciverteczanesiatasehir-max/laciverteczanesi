@@ -1,143 +1,571 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lacivert Eczanesi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lacivert Eczanesi | Ataşehir İstanbul</title>
+    <meta name="description" content="Lacivert Eczanesi - Ataşehir, İstanbul. İlaç, Dermokozmetik, Anne-Bebek, Vitamin ve Medikal Ürün Danışmanlığı. Hemen arayın veya yol tarifi alın.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a1120;
+            --bg-secondary: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #334155;
+            --accent-blue: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --green-wa: #25d366;
+            --green-wa-hover: #1da851;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 10px;
+            --shadow-glow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+        }
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:linear-gradient(135deg,#081b33,#123b73);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    color:white;
-}
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 90px;
+            min-height: 100vh;
+        }
 
-.card{
-    width:90%;
-    max-width:420px;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(15px);
-    border-radius:28px;
-    padding:35px;
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
-    text-align:center;
-}
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.logo{
-    width:120px;
-    margin:0 auto 20px;
-}
+        /* Header Section */
+        header {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(10, 17, 32, 0.8) 100%);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 40px 0 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-.logo img{
-    width:120px;
-    height:120px;
-    object-fit:contain;
-    display:block;
-}
-}
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+            pointer-events: none;
+        }
 
-h1{
-    font-size:30px;
-    margin-bottom:8px;
-}
+        .logo-container {
+            margin-bottom: 20px;
+            display: inline-block;
+            position: relative;
+        }
 
-h2{
-    font-size:18px;
-    color:#dfe9ff;
-    font-weight:400;
-    margin-bottom:25px;
-}
+        .logo-container img {
+            max-width: 220px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4));
+        }
 
-.address{
-    line-height:1.6;
-    margin-bottom:25px;
-    color:#edf2ff;
-}
+        .pharmacy-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
 
-.btn{
-    display:block;
-    margin:12px 0;
-    padding:15px;
-    text-decoration:none;
-    background:white;
-    color:#0b2d57;
-    border-radius:15px;
-    font-weight:bold;
-    transition:.25s;
-}
+        .pharmacy-subtitle {
+            color: var(--accent-blue);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
 
-.btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 20px rgba(0,0,0,.2);
-}
+        .badge-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #4ade80;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
 
-.footer{
-    margin-top:25px;
-    font-size:13px;
-    color:#dbe5ff;
-}
-</style>
+        .badge-status .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22c55e;
+            animation: pulse 2s infinite;
+        }
 
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Quick Action Grid */
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 35px 0 50px 0;
+        }
+
+        .btn-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px 24px;
+            border-radius: var(--radius-md);
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border: 1px solid transparent;
+        }
+
+        .btn-action svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .btn-call {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        .btn-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+        }
+
+        .btn-wa {
+            background: linear-gradient(135deg, #25d366 0%, #16a34a 100%);
+            color: #ffffff;
+        }
+
+        .btn-wa:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-maps {
+            background: var(--bg-card);
+            color: var(--text-main);
+            border-color: var(--border-color);
+        }
+
+        .btn-maps:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-3px);
+            border-color: var(--accent-blue);
+        }
+
+        .btn-nobet {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: #ffffff;
+        }
+
+        .btn-nobet:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 28px 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: var(--shadow-glow);
+            background: var(--bg-card-hover);
+        }
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--accent-glow);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--accent-blue);
+        }
+
+        .service-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Info & Contact Box */
+        .info-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .info-card {
+                grid-template-columns: 1fr;
+                padding: 24px;
+            }
+        }
+
+        .info-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .info-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+            flex-shrink: 0;
+        }
+
+        .info-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        .info-content h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .info-content p, .info-content a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: block;
+        }
+
+        .info-content a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        /* Fixed Bottom Bar for Mobile */
+        .mobile-bottom-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid var(--border-color);
+            padding: 10px 16px;
+            z-index: 999;
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.5);
+        }
+
+        .mobile-bar-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .mobile-bar-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 8px 0;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .mobile-bar-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .m-btn-call { background: #0284c7; }
+        .m-btn-wa { background: #25d366; }
+        .m-btn-maps { background: #334155; }
+
+        @media (max-width: 640px) {
+            .mobile-bottom-bar {
+                display: block;
+            }
+            .pharmacy-title {
+                font-size: 1.8rem;
+            }
+            .actions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="card">
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo.PNG" alt="Lacivert Eczanesi Logo" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
+                <div id="alt-logo" style="display:none; font-size:2.5rem; font-weight:800; color:#38bdf8; margin-bottom:10px;">
+                    💙 LACİVERT ECZANESİ
+                </div>
+            </div>
+            <h1 class="pharmacy-title">Lacivert Eczanesi</h1>
+            <p class="pharmacy-subtitle">Sağlığınız İçin Güvenli Adres</p>
+            
+            <div class="badge-status">
+                <span class="dot"></span>
+                <span>Hafta İçi & Cumartesi: 09:00 - 19:00</span>
+            </div>
+        </div>
+    </header>
 
-<div class="logo">
-    <img src="logo.PNG" alt="Lacivert Eczanesi Logo">
-</div>
+    <main class="container">
+        <!-- Quick Actions -->
+        <section class="actions-grid">
+            <a href="tel:02164562918" class="btn-action btn-call">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                Hemen Ara (Sabit)
+            </a>
 
-<h1>LACİVERT ECZANESİ</h1>
+            <a href="https://wa.me/905304929755?text=Merhaba,%20bilgi%20almak%20istiyorum." target="_blank" class="btn-action btn-wa">
+                <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.5c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.188 8.188 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.188 8.188 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.12-.56.12-.17.25-.66.8-.81.97-.15.17-.31.19-.56.07-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.1-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.35-.77-1.85c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.3z"/></svg>
+                WhatsApp İletişim
+            </a>
 
-<h2>Ecz. Elif Yiğit</h2>
+            <a href="https://maps.google.com/?q=Atatürk+Mahallesi,+Sedef+Caddesi+No:12-53,+Ataşehir/İstanbul" target="_blank" class="btn-action btn-maps">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Yol Tarifi Al
+            </a>
 
-<div class="address">
-Atatürk Mahallesi<br>
-Sedef Caddesi No:12-53<br>
-Ataşehir / İstanbul<br><br>
-Ata Blokları 3/4 Blokları Altı<br>
-Giriş Kapısı
-</div>
+            <a href="https://www.eczaneler.gen.tr/nobetci-istanbul-atasehir" target="_blank" rel="noopener" class="btn-action btn-nobet">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>
+                Nöbetçi Eczaneler
+            </a>
+        </section>
 
-<a class="btn"
-href="https://maps.app.goo.gl/K95Fdw5rzwRLXRGt8"
-target="_blank">
-📍 Yol Tarifi
-</a>
+        <!-- Services -->
+        <section>
+            <div class="section-title">
+                <h2>Hizmetlerimiz & Ürün Gruplarımız</h2>
+                <p>Eczanemizde sunduğumuz uzmanlık alanları ve danışmanlık hizmetleri</p>
+            </div>
 
-<a class="btn"
-href="tel:02164562918">
-☎️ 0216 456 29 18
-</a>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4.5 10.5C3.67 10.5 3 11.17 3 12s.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5h-15zM10.5 4.5C10.5 3.67 11.17 3 12 3s1.5.67 1.5 1.5v15c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5v-15z"/></svg>
+                    </div>
+                    <h3>Reçeteli İlaç Danışmanlığı</h3>
+                    <p>SGK ve özel sigortalı reçetelerinizin hızlı ve doğru hazırlanması, kullanım dozaj bilgi danışmanlığı.</p>
+                </div>
 
-<a class="btn"
-href="https://wa.me/905304929755"
-target="_blank">
-💬 WhatsApp
-</a>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <h3>Dermokozmetik & Cilt Bakımı</h3>
+                    <p>Dünyaca ünlü markalar, cilt tipinize özel analiz ve doğru ürün seçim desteği.</p>
+                </div>
 
-<a class="btn"
-href="https://www.google.com/search?q=Lacivert+Eczanesi+Ataşehir"
-target="_blank">
-⭐ Google'da Yorum Yap
-</a>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    </div>
+                    <h3>Vitamin & Gıda Takviyeleri</h3>
+                    <p>Bağışıklık desteği, sporcu besinleri ve kişiye özel takviye vitamin önerileri.</p>
+                </div>
 
-<div class="footer">
-💙 Sağlığınız için her zaman yanınızdayız.
-</div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    </div>
+                    <h3>Anne & Bebek Sağlığı</h3>
+                    <p>Bebek mamaları, bakım ürünleri, emzirme aksesuarları ve uzman tavsiyeleri.</p>
+                </div>
 
-</div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-2 11H7v-5h10v5zm2-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
+                    </div>
+                    <h3>Medikal Ürünler & Ölçüm</h3>
+                    <p>Tansiyon aleti, şeker ölçüm cihazı ve yedek parçaları, medikal ortopedik gereçler.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    </div>
+                    <h3>Kişisel Bakım & Hijyen</h3>
+                    <p>Ağız ve diş sağlığı, saç bakımı, hijyen ürünleri ve günlük bakım ihtiyaçları.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Card -->
+        <section class="info-card">
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <div class="info-content">
+                    <h4>Eczane Adresi</h4>
+                    <p>Atatürk Mahallesi, Sedef Caddesi No:12-53<br>Ataşehir / İstanbul</p>
+                    <p style="margin-top: 4px; font-size:0.85rem; color:#38bdf8;">(Ata Blokları 3/4 Blokları Altı, Giriş Kapısı Yanı)</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </div>
+                <div class="info-content">
+                    <h4>İletişim Telefonları</h4>
+                    <a href="tel:02164562918"><strong>Sabit:</strong> 0216 456 29 18</a>
+                    <a href="https://wa.me/905304929755" target="_blank" style="margin-top:4px;"><strong>GSM / WA:</strong> 0530 492 97 55</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>Lacivert Eczanesi</strong> &copy; 2026 - Tüm Hakları Saklıdır.</p>
+            <p style="opacity: 0.7;">Sağlığınız ve mutluluğunuz için her zaman yanınızdayız.</p>
+        </div>
+    </footer>
+
+    <!-- Fixed Bottom Bar for Mobile Devices -->
+    <div class="mobile-bottom-bar">
+        <div class="mobile-bar-items">
+            <a href="tel:02164562918" class="mobile-bar-btn m-btn-call">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                Ara
+            </a>
+            <a href="https://wa.me/905304929755?text=Merhaba,%20bilgi%20almak%20istiyorum." target="_blank" class="mobile-bar-btn m-btn-wa">
+                <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.5c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.188 8.188 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.188 8.188 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.12-.56.12-.17.25-.66.8-.81.97-.15.17-.31.19-.56.07-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.1-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.35-.77-1.85c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.3z"/></svg>
+                WhatsApp
+            </a>
+            <a href="https://maps.google.com/?q=Atatürk+Mahallesi,+Sedef+Caddesi+No:12-53,+Ataşehir/İstanbul" target="_blank" class="mobile-bar-btn m-btn-maps">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Yol Tarifi
+            </a>
+        </div>
+    </div>
 
 </body>
 </html>
