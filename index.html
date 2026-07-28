@@ -281,6 +281,50 @@
             line-height: 1.5;
         }
 
+        /* Contracted Institutions Section */
+        .institutions-section {
+            margin-bottom: 50px;
+        }
+
+        .institutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 16px;
+        }
+
+        .institution-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 16px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .institution-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-blue);
+            background: var(--bg-card-hover);
+        }
+
+        .institution-card img {
+            max-width: 80px;
+            max-height: 45px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .institution-card span {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
         /* Info & Contact Box */
         .info-card {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -446,7 +490,7 @@
                 WhatsApp İletişim
             </a>
 
-            <a href="https://maps.google.com/?q=Atatürk+Mahallesi,+Sedef+Caddesi+No:12-53,+Ataşehir/İstanbul" target="_blank" class="btn-action btn-maps">
+            <a href="https://maps.app.goo.gl/K95Fdw5rzwRLXRGt8" target="_blank" class="btn-action btn-maps">
                 <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 Yol Tarifi Al
             </a>
@@ -515,6 +559,49 @@
             </div>
         </section>
 
+        <!-- Anlaşmalı Kurumlar Bölümü -->
+        <section class="institutions-section">
+            <div class="section-title">
+                <h2>Anlaşmalı Kurumlarımız</h2>
+                <p>Eczanemizde geçerli olan resmi ve özel sağlık sigortaları</p>
+            </div>
+
+            <div class="institutions-grid">
+                <div class="institution-card">
+                    <img src="sgk-logo.png" alt="SGK Logo" onerror="this.style.display='none'">
+                    <span>SGK</span>
+                </div>
+                <div class="institution-card">
+                    <img src="allianz-logo.png" alt="Allianz Sigorta Logo" onerror="this.style.display='none'">
+                    <span>Allianz Sigorta</span>
+                </div>
+                <div class="institution-card">
+                    <img src="sencard-logo.png" alt="senCard Logo" onerror="this.style.display='none'">
+                    <span>senCard</span>
+                </div>
+                <div class="institution-card">
+                    <img src="mapfre-logo.png" alt="Mapfre Sigorta Logo" onerror="this.style.display='none'">
+                    <span>Mapfre Sigorta</span>
+                </div>
+                <div class="institution-card">
+                    <img src="anadolu-sigorta-logo.png" alt="Anadolu Sigorta Logo" onerror="this.style.display='none'">
+                    <span>Anadolu Sigorta</span>
+                </div>
+                <div class="institution-card">
+                    <img src="turkiye-sigorta-logo.png" alt="Türkiye Sigorta Logo" onerror="this.style.display='none'">
+                    <span>Türkiye Sigorta</span>
+                </div>
+                <div class="institution-card">
+                    <img src="ziraat-logo.png" alt="Ziraat Bankası Logo" onerror="this.style.display='none'">
+                    <span>Ziraat Bankası</span>
+                </div>
+                <div class="institution-card">
+                    <img src="is-bankasi-logo.png" alt="Türkiye İş Bankası Logo" onerror="this.style.display='none'">
+                    <span>Türkiye İş Bankası</span>
+                </div>
+            </div>
+        </section>
+
         <!-- Information Card -->
         <section class="info-card">
             <div class="info-item">
@@ -560,7 +647,7 @@
                 <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.5c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.188 8.188 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.188 8.188 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.12-.56.12-.17.25-.66.8-.81.97-.15.17-.31.19-.56.07-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.1-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.35-.77-1.85c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.3z"/></svg>
                 WhatsApp
             </a>
-            <a href="https://maps.google.com/?q=Atatürk+Mahallesi,+Sedef+Caddesi+No:12-53,+Ataşehir/İstanbul" target="_blank" class="mobile-bar-btn m-btn-maps">
+            <a href="https://maps.app.goo.gl/K95Fdw5rzwRLXRGt8" target="_blank" class="mobile-bar-btn m-btn-maps">
                 <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 Yol Tarifi
             </a>
